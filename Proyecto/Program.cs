@@ -12,7 +12,7 @@ namespace Proyecto
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
-            console.writeLine("Hola Mundo");
+            
         }
     }
 }

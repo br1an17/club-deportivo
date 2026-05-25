@@ -40,7 +40,7 @@
             lblIngreso.AutoSize = true;
             lblIngreso.Location = new Point(33, 11);
             lblIngreso.Name = "lblIngreso";
-            lblIngreso.Size = new Size(0, 19);
+            lblIngreso.Size = new Size(0, 16);
             lblIngreso.TabIndex = 0;
             lblIngreso.Click += lblIngreso_Click;
             // 
@@ -48,7 +48,7 @@
             // 
             btnSalir.BackColor = Color.DeepSkyBlue;
             btnSalir.FlatStyle = FlatStyle.Popup;
-            btnSalir.Font = new Font("Noto Serif", 11.2499981F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnSalir.Font = new Font("Microsoft Sans Serif", 11.2499981F, FontStyle.Italic, GraphicsUnit.Point, 0);
             btnSalir.Location = new Point(637, 11);
             btnSalir.Margin = new Padding(3, 4, 3, 4);
             btnSalir.Name = "btnSalir";
@@ -62,7 +62,7 @@
             // 
             btnRegistrar.BackColor = Color.AliceBlue;
             btnRegistrar.FlatStyle = FlatStyle.Flat;
-            btnRegistrar.Font = new Font("Noto Serif", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnRegistrar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnRegistrar.ForeColor = Color.Navy;
             btnRegistrar.Location = new Point(101, 97);
             btnRegistrar.Margin = new Padding(3, 4, 3, 4);
@@ -77,7 +77,7 @@
             // 
             btnCobrar.BackColor = Color.AliceBlue;
             btnCobrar.FlatStyle = FlatStyle.Flat;
-            btnCobrar.Font = new Font("Noto Serif", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnCobrar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnCobrar.ForeColor = Color.Navy;
             btnCobrar.Location = new Point(419, 97);
             btnCobrar.Margin = new Padding(3, 4, 3, 4);
@@ -86,11 +86,12 @@
             btnCobrar.TabIndex = 3;
             btnCobrar.Text = "Cobrar Cuota";
             btnCobrar.UseVisualStyleBackColor = false;
+            btnCobrar.Click += btnCobrar_Click;
             // 
             // btnListar
             // 
             btnListar.BackColor = Color.Navy;
-            btnListar.Font = new Font("Noto Serif", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnListar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnListar.ForeColor = SystemColors.ButtonHighlight;
             btnListar.Location = new Point(265, 250);
             btnListar.Margin = new Padding(3, 4, 3, 4);
@@ -103,7 +104,7 @@
             // 
             // frmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(9F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(914, 570);
@@ -112,7 +113,7 @@
             Controls.Add(btnRegistrar);
             Controls.Add(btnSalir);
             Controls.Add(lblIngreso);
-            Font = new Font("Noto Serif", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmPrincipal";
             Text = "frmPrincipal";

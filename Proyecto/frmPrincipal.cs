@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,16 @@ namespace Proyecto
             frmRegistrar registro = new frmRegistrar();
             registro.Show();
             this.Hide();
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+            CobrarCuota cobrar = new CobrarCuota();
+
+            cobrar.Show();
+
+            this.Hide();
+      
         }
     }
 }

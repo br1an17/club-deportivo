@@ -17,7 +17,7 @@ namespace Proyecto.Datos
             MySqlConnection sqlCon = new MySqlConnection();
             try
             {
-                sqlCon = Conexion.getInstancia().CrearConcexion();
+                sqlCon = Conexion.getInstancia().CrearConexion();
                 MySqlCommand comando = new MySqlCommand("NuevoCli", sqlCon);
                 comando.CommandType = CommandType.StoredProcedure;
 
