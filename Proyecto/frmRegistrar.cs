@@ -39,6 +39,15 @@ namespace Proyecto
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            string TipoCliente = "";
+            if (rbSocio.Checked)
+            {
+                TipoCliente = "Socio";
+            }
+            else
+            {
+                TipoCliente = "No Socio";
+            }
             if (txtNombre.Text == "" || txtApellido.Text == "" || cboTipo.Text == "" ||
 txtDocumento.Text == "" || txtTelefono.Text == "" || txtEmail.Text == "")
             {
@@ -46,16 +55,18 @@ txtDocumento.Text == "" || txtTelefono.Text == "" || txtEmail.Text == "")
                 "AVISO DEL SISTEMA", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
             }
+            
             else
             {
                 string respuesta;
                 E_Cliente client = new E_Cliente();
                 client.NombreC = txtNombre.Text;
                 client.ApellidoC = txtApellido.Text;
-                client.TDocC = cboTipo.Text;
+                client.TipoDocC = cboTipo.Text;
                 client.DocC = Convert.ToInt32(txtDocumento.Text);
                 client.Telefono = txtTelefono.Text;
                 client.Email = txtEmail.Text;
+                
                 // instanciamos para usar el metodo dentro de postulantes
                 Datos.Clientes clientes = new Datos.Clientes();
                 respuesta = clientes.Nuevo_Cliente(client);

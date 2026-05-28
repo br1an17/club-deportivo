@@ -23,10 +23,12 @@ namespace Proyecto.Datos
 
                 comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = client.NombreC;
                 comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = client.ApellidoC;
-                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = client.TDocC;
+                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = client.TipoDocC;
                 comando.Parameters.Add("Doc", MySqlDbType.Int32).Value = client.DocC;
                 comando.Parameters.Add("Tel", MySqlDbType.VarChar).Value = client.Telefono;
                 comando.Parameters.Add("Mail", MySqlDbType.VarChar).Value = client.Email;
+                comando.Parameters.Add("TipoCliente", MySqlDbType.VarChar).Value = client.TipoCliente;
+                comando.Parameters.Add("TieneCarnet", MySqlDbType.Bit).Value = client.TieneCarnet;
 
                 MySqlParameter ParCodigo = new MySqlParameter();
                 ParCodigo.ParameterName = "rta";

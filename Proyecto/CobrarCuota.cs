@@ -27,11 +27,13 @@ namespace Proyecto
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 /* Consulta simple que proyecta los datos necesarios para rellenar el documento*/
 
-                string query = "SELECT id_usuario, nombre, apellido, tipo_usuario " +
-                               "FROM clientes " +
+                string query = "SELECT NCliente, NombreC, ApellidoC, TipoCliente " +
+                               "FROM cliente " +
 
-                               "WHERE id_usuario = " + txtID.Text; //<-- usamos el dato ingresado por el usuario
+                               "WHERE NCliente =  + @id"; //<-- usamos el dato ingresado por el usuario
                 MySqlCommand comando = new MySqlCommand(query, sqlCon);
+                comando.Parameters.AddWithValue("@id", txtID.Text);
+
                 //Usamos la consulta y la conexion
                 comando.CommandType = CommandType.Text;
 
