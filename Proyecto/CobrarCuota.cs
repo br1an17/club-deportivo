@@ -68,26 +68,35 @@ namespace Proyecto
                     doc.fecha_c = DateTime.Now;
 
                     //forma de pago
-                    if (optEfectivo.Checked == true) //evaluamos que opcion es la seleccionada2
+                    if (optEfectivo.Checked == true) //si seleccionó efectivo
                     {
                         doc.forma_c = "Efectivo";
 
                         doc.cuotas_c = 1;
 
                         doc.valorCuota_c = doc.monto_c;
+                        //oculta cuotas
+                        cmbCuotas.Visible = false;
+                        lblCuotas.Visible = false;
                     }
-                    else
+                    else if(optTarjeta.Checked == true) //si seleccionó tarjeta
                     {
+                        //muestra cuotas
+                        cmbCuotas.Visible = true;
+                        lblCuotas.Visible = true;
+
                         doc.forma_c = "Tarjeta";
+
+                        //validamos que haya seleccionado cuotas
                         if (cmbCuotas.Text == "")
                         {
                             MessageBox.Show("Seleccione cantidad de cuotas");
                             return;
                         }
                         doc.cuotas_c = Convert.ToInt32(cmbCuotas.Text);
-
                         doc.valorCuota_c = doc.monto_c / doc.cuotas_c;
 
+                        //interés según cuotas
                         if (cmbCuotas.Text == "3")
                         {
                             doc.monto_c = doc.monto_c * 1.10f;
@@ -97,6 +106,11 @@ namespace Proyecto
                             doc.monto_c = doc.monto_c * 1.20f;
                         }
                         doc.valorCuota_c = doc.monto_c / doc.cuotas_c;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un método de pago");
+                        return;
                     }
 
                     btnComprobante.Enabled = true;
@@ -138,12 +152,14 @@ namespace Proyecto
 
         private void optTarjeta_CheckedChanged(object sender, EventArgs e)
         {
-            cmbCuotas.Enabled = true;
+            cmbCuotas.Visible = optTarjeta.Checked;
+            lblCuotas.Visible = optTarjeta.Checked;
         }
 
         private void optEfectivo_CheckedChanged(object sender, EventArgs e)
         {
-            cmbCuotas.Enabled = false;
+            cmbCuotas.Visible = false;
+            lblCuotas.Visible = false;
         }
     }
 }
