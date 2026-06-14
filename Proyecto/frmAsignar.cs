@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Mysqlx.Crud;
 using Proyecto.Datos;
+using Proyecto.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,7 +106,7 @@ namespace Proyecto
 
                 MessageBox.Show(
                     "Actividad: " + actividad + "\n" +
-                    "Dia: " + dia + "  " + "Horario: " + horario+ "\n" +
+                    "Dia: " + dia + "  " + "Horario: " + horario + "\n" +
                     "Profesor: " + profesor + "\n" +
                     "Precio: " + precio,
                     "",
@@ -157,20 +158,30 @@ namespace Proyecto
                 con.Open();
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                
+
                 if (reader.Read())
                 {
                     numClient = reader.GetInt32(0);
                     lblCliente.Text = reader.GetString(1) + " " + reader.GetString(2);
                     esSocio = reader.GetBoolean(3);
                     if (esSocio)
-                    {  
+                    {
                         MessageBox.Show(
                             "El cliente es SOCIO.\nTiene pase libre a todas las actividades.",
                             "Información",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
+                    E_Cliente cliente;
+                    if (esSocio)
+                    {
+                        cliente = new E_Socio();
+                    }
+                    else
+                    {
+                        cliente = new E_NoSocio();
+                    }
+                    lblTipoCliente.Text = cliente.ObtenerBeneficio();
                 }
                 else
                 {
@@ -270,6 +281,11 @@ namespace Proyecto
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void lblTipoCliente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

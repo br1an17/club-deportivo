@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             dtgvActividades = new DataGridView();
-            txtDni = new TextBox();
-            lblCliente = new Label();
-            btnVolver = new Button();
-            btnBuscar = new Button();
-            btnAsignar = new Button();
-            lblGrilla = new Label();
             idEdicion = new DataGridViewTextBoxColumn();
             Actividad = new DataGridViewTextBoxColumn();
             Dia = new DataGridViewTextBoxColumn();
             Horario = new DataGridViewTextBoxColumn();
             Profesor = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
+            txtDni = new TextBox();
+            lblCliente = new Label();
+            btnVolver = new Button();
+            btnBuscar = new Button();
+            btnAsignar = new Button();
+            lblGrilla = new Label();
+            lblTipoCliente = new Label();
             ((System.ComponentModel.ISupportInitialize)dtgvActividades).BeginInit();
             SuspendLayout();
             // 
@@ -55,6 +56,37 @@
             dtgvActividades.CellClick += dtgvActividades_CellClick;
             dtgvActividades.CellContentClick += dtgvActividades_CellContentClick;
             // 
+            // idEdicion
+            // 
+            idEdicion.HeaderText = "IDEdicion";
+            idEdicion.Name = "idEdicion";
+            idEdicion.Visible = false;
+            // 
+            // Actividad
+            // 
+            Actividad.HeaderText = "ACTIVIDAD";
+            Actividad.Name = "Actividad";
+            // 
+            // Dia
+            // 
+            Dia.HeaderText = "DIA";
+            Dia.Name = "Dia";
+            // 
+            // Horario
+            // 
+            Horario.HeaderText = "HORARIO";
+            Horario.Name = "Horario";
+            // 
+            // Profesor
+            // 
+            Profesor.HeaderText = "PROFESOR";
+            Profesor.Name = "Profesor";
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "PRECIO";
+            Precio.Name = "Precio";
+            // 
             // txtDni
             // 
             txtDni.Location = new Point(41, 40);
@@ -68,7 +100,7 @@
             // lblCliente
             // 
             lblCliente.AutoSize = true;
-            lblCliente.Location = new Point(239, 106);
+            lblCliente.Location = new Point(64, 89);
             lblCliente.Name = "lblCliente";
             lblCliente.Size = new Size(62, 15);
             lblCliente.TabIndex = 2;
@@ -119,36 +151,15 @@
             lblGrilla.TabIndex = 6;
             lblGrilla.Text = "Seleccione la actividad";
             // 
-            // idEdicion
+            // lblTipoCliente
             // 
-            idEdicion.HeaderText = "IDEdicion";
-            idEdicion.Name = "idEdicion";
-            idEdicion.Visible = false;
-            // 
-            // Actividad
-            // 
-            Actividad.HeaderText = "ACTIVIDAD";
-            Actividad.Name = "Actividad";
-            // 
-            // Dia
-            // 
-            Dia.HeaderText = "DIA";
-            Dia.Name = "Dia";
-            // 
-            // Horario
-            // 
-            Horario.HeaderText = "HORARIO";
-            Horario.Name = "Horario";
-            // 
-            // Profesor
-            // 
-            Profesor.HeaderText = "PROFESOR";
-            Profesor.Name = "Profesor";
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "PRECIO";
-            Precio.Name = "Precio";
+            lblTipoCliente.AutoSize = true;
+            lblTipoCliente.Location = new Point(139, 118);
+            lblTipoCliente.Name = "lblTipoCliente";
+            lblTipoCliente.Size = new Size(28, 15);
+            lblTipoCliente.TabIndex = 7;
+            lblTipoCliente.Text = "tipo";
+            lblTipoCliente.Click += lblTipoCliente_Click;
             // 
             // frmAsignar
             // 
@@ -156,6 +167,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblTipoCliente);
             Controls.Add(lblGrilla);
             Controls.Add(btnAsignar);
             Controls.Add(btnBuscar);
@@ -186,5 +198,6 @@
         private DataGridViewTextBoxColumn Horario;
         private DataGridViewTextBoxColumn Profesor;
         private DataGridViewTextBoxColumn Precio;
+        private Label lblTipoCliente;
     }
 }

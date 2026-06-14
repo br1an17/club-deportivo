@@ -16,5 +16,10 @@ namespace Proyecto.Entidades
         public bool EsSocio { get; set; }
         public bool Apto { get; set; }
 
+        public virtual string ObtenerBeneficio()
+        {
+            return "";
+        }
+
     }
 }
